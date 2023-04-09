@@ -6,7 +6,7 @@ module.exports = {
       {
         foodtheme: {
           primary: "#FA7316",
-          secondary: "#19D3AE",
+          secondary: "#FFE4C6",
           accent: "#3A4256",
           neutral: "#3D4451",
           "base-100": "#FFFFFF",
@@ -15,7 +15,11 @@ module.exports = {
     ],
   },
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        raleWay: ["Raleway", "sans - serifs"],
+      },
+    },
   },
   plugins: [require("daisyui")],
 };

@@ -42,9 +42,14 @@ function App() {
   };
 
   return (
-    <div className="max-w-[1280px] h-[780px] w-full m-auto py-10 px-4 relative group">
+    <div className="max-w-[1280px] h-[700px] w-full m-auto py-10 px-4 relative group">
       <div
-        style={{ backgroundImage: `url(${slides[currentIndex]?.url})` }}
+        style={{
+          backgroundImage: `url(${slides[currentIndex]?.url})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          height: "600px",
+        }}
         className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
       ></div>
       {/* Left Arrow */}
