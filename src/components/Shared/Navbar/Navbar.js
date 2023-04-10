@@ -4,14 +4,20 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const menuItems = (
     <>
-      <li>
+      <div className="text-orange-500  py-4 group px-2 ">
         <Link>Home</Link>
-      </li>
-      <li>
+        <div className="flex justify-center items-center">
+          <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+        </div>
+      </div>
+      <div className="text-orange-500  py-4 group px-2 ">
         <Link>Food</Link>
-      </li>
-      <li tabIndex={0}>
-        <Link>
+        <div className="flex justify-center items-center">
+          <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+        </div>
+      </div>
+      <li className="" tabIndex={0}>
+        {/* <Link>
           Category
           <svg
             className="fill-current"
@@ -22,29 +28,58 @@ const Navbar = () => {
           >
             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
           </svg>
-        </Link>
-        <ul className="p-2">
-          <li>
+        </Link> */}
+
+        <div className="flex lg:justify-center items-center text-orange-500 mt-[-5px]  group pl-2">
+          <Link className="">Category</Link>
+          <svg
+            className="fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+          >
+            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+          </svg>
+          <div className="flex justify-center items-center">
+            <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+          </div>
+        </div>
+
+        <ul className="p-2 z-10">
+          <div className="text-orange-500 pt-2 group px-2 text-center bg-red-100 mt-2 rounded-md">
             <Link>Category 1</Link>
-          </li>
-          <li>
+            <div className="flex justify-center items-center">
+              <div className=" mt-4 w-0 h-[2px] bg-orange-500  group-hover:w-full ease-out duration-300"></div>
+            </div>
+          </div>
+          <div className="text-orange-500 pt-2 group px-2 text-center bg-red-100 mt-2 rounded-md">
             <Link>Category 2</Link>
-          </li>
+            <div className="flex justify-center items-center">
+              <div className=" mt-4 w-0 h-[2px] bg-orange-500  group-hover:w-full ease-out duration-300"></div>
+            </div>
+          </div>
         </ul>
       </li>
-      <li>
-        <Link>Booking Food</Link>
-      </li>
-      <li>
+      <div className="text-orange-500  py-4 group px-0 ">
         <Link>About Us</Link>
-      </li>
+        <div className="flex justify-center items-center">
+          <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+        </div>
+      </div>
+      <div className="text-orange-500  py-4 group px-4 ">
+        <Link>Cart</Link>
+        <div className="flex justify-center items-center">
+          <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+        </div>
+      </div>
     </>
   );
 
   return (
     <div className="bg-orange-100">
       <div className="max-w-7xl mx-auto">
-        <div className="navbar ">
+        <div className="navbar py-5">
           <div className="navbar">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -60,19 +60,19 @@ const TopFoods = () => {
   ];
   return (
     <div className="">
-      <div className="lg:bg-orange-50 py-10 lg:h-[1050px] px-10">
+      <div className="lg:bg-red-50 py-10 lg:h-[1050px] px-10">
         <div className="">
-          <h1 className="text-4xl text-orange-400 text-center font-semibold ">
+          <h1 className="text-4xl text-orange-400 text-center font-raleWay font-semibold ">
             Top Food
           </h1>
-          <p className="text-center text-xl mt-5 leading-7">
+          <p className="text-center font-raleWay text-xl mt-5 leading-7 text-gray-500">
             The following dishes are among the best selling dishes in our
             restaurant . <br /> The taste of these dishes is very unique.These
             dishes are the most requested by customer from us.
           </p>
         </div>
 
-        <div className="mx-auto max-w-7xl mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
+        <div className="mx-auto max-w-7xl mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {allTopFoods.map((topFood) => (
             <TopFood key={topFood.id} topFood={topFood}></TopFood>
           ))}
