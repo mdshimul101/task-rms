@@ -1,5 +1,5 @@
 import React from "react";
-import Contact from "../Contact/Contact";
+import useTitle from "../../../hooks/useTitle";
 import FeatureProducts from "../FeatureProducts/FeatureProducts";
 import Slider from "../Slider/Slider";
 import SpecialMenu from "../SpecialMenu/SpecialMenu";
@@ -8,6 +8,7 @@ import TopCards from "../TopCardFood/TopCards";
 import TopFoods from "../TopFood/TopFoods";
 
 const Home = () => {
+  useTitle("Home");
   return (
     <div>
       <Slider></Slider>
@@ -16,7 +17,6 @@ const Home = () => {
       <SpecialMenu></SpecialMenu>
       <FeatureProducts></FeatureProducts>
       <SpecialService></SpecialService>
-      <Contact></Contact>
     </div>
   );
 };

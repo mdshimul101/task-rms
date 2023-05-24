@@ -18,6 +18,8 @@ module.exports = {
     extend: {
       fontFamily: {
         raleWay: ["Raleway", "sans - serifs"],
+        montserrat: ["Montserrat", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
     },
   },

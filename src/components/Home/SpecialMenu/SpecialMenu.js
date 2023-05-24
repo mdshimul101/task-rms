@@ -28,7 +28,7 @@ const SpecialMenu = () => {
     },
   ];
   return (
-    <div className=" py-10">
+    <div className="py-10">
       <div className="text-center">
         <div className="flex justify-center items-center">
           <img

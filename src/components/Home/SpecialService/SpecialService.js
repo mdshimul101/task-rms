@@ -52,7 +52,7 @@ const SpecialService = () => {
             <span className="text-stone-500">Special Service</span>
           </h1>
           <div className="flex justify-center items-center ">
-            <p className="border-b-2 border-red-600 w-16 group-hover:w-24 ease-out duration-300  text-center mt-3"></p>
+            <span className="border-b-2 border-red-600 w-16 group-hover:w-24 ease-out duration-300  text-center mt-3"></span>
           </div>
         </div>
 
@@ -73,7 +73,7 @@ const SpecialService = () => {
                     <img
                       src={service.icon}
                       alt=""
-                      className="group-hover:hidden duration-300"
+                      className="group-hover:hidden duration-500 ease-linear"
                     />
                   </div>
                   <h3 className=" text-2xl text-gray-400 text-center font-raleWay font-thin mt-10 group-hover:hidden">
@@ -81,13 +81,13 @@ const SpecialService = () => {
                   </h3>
                 </div>
               </div>
-              <div className="bg-black/50 absolute  bottom-0 left-0 right-0  w-full h-0 group-hover:h-full duration-[.4s] ease-linear overflow-hidden">
+              <div className="bg-black/50 absolute  bottom-0 left-0 right-0  w-full h-0 group-hover:h-full duration-[0.4s] ease-linear overflow-hidden">
                 <img
                   src={service.image}
                   alt=""
                   className=" absolute top-1/2 left-1/2 text-center translate-x-[-50%] translate-y-[-50%] "
                 />
-                <p className="text-white text-xl font-raleWay font-medium px-3 absolute top-1/2  text-center  translate-y-[-50%]">
+                <p className="bg-[rgba(0,0,0,0.5)] py-24 w-full text-white text-xl font-raleWay font-medium px-3 absolute top-1/2  text-center  translate-y-[-50%]">
                   {service.text}
                 </p>
               </div>

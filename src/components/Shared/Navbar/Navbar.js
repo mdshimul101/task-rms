@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Navbar = () => {
+  const { logOut, userData } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error.message));
+  };
+
   const menuItems = (
     <>
-      <div className="text-orange-500  py-4 group px-2 ">
-        <Link>Home</Link>
+      <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4  group px-2 ">
+        <Link to="/">Home</Link>
         <div className="flex justify-center items-center">
           <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
         </div>
       </div>
-      <div className="text-orange-500  py-4 group px-2 ">
-        <Link>Food</Link>
+      <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4 group px-2 ">
+        <Link to="/food">Food</Link>
         <div className="flex justify-center items-center">
-          <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+          <div className=" mt-1 w-0 h-[2px] bg-orange-400 group-hover:w-full ease-out duration-300"></div>
         </div>
       </div>
-      <li className="" tabIndex={0}>
+      <div className="none" tabIndex={0}>
         {/* <Link>
           Category
           <svg
@@ -30,7 +39,7 @@ const Navbar = () => {
           </svg>
         </Link> */}
 
-        <div className="flex lg:justify-center items-center text-orange-500 mt-[-5px]  group pl-2">
+        {/* <div className="flex lg:justify-center items-center text-orange-500 mt-[-5px]  group pl-2">
           <Link className="">Category</Link>
           <svg
             className="fill-current"
@@ -59,16 +68,35 @@ const Navbar = () => {
               <div className=" mt-4 w-0 h-[2px] bg-orange-500  group-hover:w-full ease-out duration-300"></div>
             </div>
           </div>
-        </ul>
-      </li>
-      <div className="text-orange-500  py-4 group px-0 ">
-        <Link>About Us</Link>
+        </ul> */}
+      </div>
+
+      <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4 group px-2">
+        <Link to="/contact">Contact</Link>
         <div className="flex justify-center items-center">
           <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
         </div>
       </div>
-      <div className="text-orange-500  py-4 group px-4 ">
-        <Link>Cart</Link>
+      <div className="text-orange-400 hover:text-orange-500  py-2 lg:py-4 group px-2">
+        <Link to="/about">About Us</Link>
+        <div className="flex justify-center items-center">
+          <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+        </div>
+      </div>
+      <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4 group px-2 ">
+        <Link to="/cart">Cart</Link>
+        <div className="flex justify-center items-center">
+          <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+        </div>
+      </div>
+      <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4 group px-2">
+        {userData?.uid ? (
+          <Link onClick={handleLogout}>{userData.displayName} logout</Link>
+        ) : (
+          <>
+            <Link to="/login">Login</Link>
+          </>
+        )}
         <div className="flex justify-center items-center">
           <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
         </div>
@@ -79,7 +107,7 @@ const Navbar = () => {
   return (
     <div className="bg-orange-100">
       <div className="max-w-7xl mx-auto">
-        <div className="navbar py-5">
+        <div className="navbar py-2">
           <div className="navbar">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -100,7 +128,7 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
               >
                 {menuItems}
               </ul>

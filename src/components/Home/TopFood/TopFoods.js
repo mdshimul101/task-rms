@@ -9,7 +9,7 @@ const TopFoods = () => {
         "https://max-themes.net/demos/capella/upload/Pasta-Ebi-Tempura-To-Gomatare-490x314.jpg",
       title: "Spicy Crab Ramen",
       element: " Crab / Veggie / Soup",
-      price: "$20",
+      price: "$ 20",
       review: "4.8/5",
     },
     {
@@ -18,7 +18,7 @@ const TopFoods = () => {
         "https://max-themes.net/demos/capella/upload/9636932271_f178f5bc2e_o-490x314.jpg",
       title: "Fresh Crab With Lemon",
       element: "Crab / Lemon / Garlic",
-      price: "$24.5",
+      price: "$ 24.5",
       review: "4.6/5",
     },
     {
@@ -27,7 +27,7 @@ const TopFoods = () => {
         "https://max-themes.net/demos/capella/upload/3723771474_b2e8636d45_o-490x314.jpg",
       title: "Spicy Crab Ramen",
       element: " Crab / Veggie / Soup",
-      price: "$15",
+      price: "$ 15",
       review: "4.7/5",
     },
     {
@@ -36,7 +36,7 @@ const TopFoods = () => {
         "https://max-themes.net/demos/capella/upload/7623705344_3567630aa8_o-490x314.jpg",
       title: "Fried Chicken Salad",
       element: "Chicken / Butter / Veggie",
-      price: "$12",
+      price: "$ 12",
       review: "4.4/5",
     },
     {
@@ -45,7 +45,7 @@ const TopFoods = () => {
         "https://max-themes.net/demos/capella/upload/4435938839_0e86fdba04_o1-490x314.jpg",
       title: "Italian Source Mushroom",
       element: "Mushroom / Garlic / Veggies",
-      price: "$30",
+      price: "$ 30",
       review: "4.3/5",
     },
     {
@@ -54,7 +54,7 @@ const TopFoods = () => {
         "https://max-themes.net/demos/capella/upload/6235831243_ba46458d17_o-490x314.jpg",
       title: "Fried Potatoes With Garlic",
       element: "Potatoes / Olive Oil / Garlic",
-      price: "$10",
+      price: "$ 10",
       review: "4.5/5",
     },
   ];
