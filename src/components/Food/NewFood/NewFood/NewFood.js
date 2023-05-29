@@ -4,7 +4,7 @@ import { newFoodData } from "../NewFoodData";
 const NewFood = () => {
   const [foodType, setFoodType] = useState("All");
   return (
-    <div className="max-w-7xl mx-auto py-10 px-5 lg:px-0">
+    <div className="max-w-7xl mx-auto py-6 px-5 lg:px-0">
       <div className="flex-none lg:flex w-full justify-between ">
         <div className="w-full lg:w-1/2">
           <div className="group">
@@ -27,7 +27,11 @@ const NewFood = () => {
               All
             </button>
             <div className="flex justify-center items-center ">
-              <span className="border-b-2 border-orange-400 w-0 group-hover:w-full ease-out duration-300  text-center mt-1"></span>
+              <span
+                className={`border-b-2 border-orange-400 ${
+                  foodType === "All" && "w-full"
+                } w-0 group-hover:w-full ease-out duration-300  text-center mt-1`}
+              ></span>
             </div>
           </div>
           <div className="group mr-8">
@@ -40,7 +44,11 @@ const NewFood = () => {
               Fast Food
             </button>
             <div className="flex justify-center items-center ">
-              <span className="border-b-2 border-orange-400 w-0 group-hover:w-full ease-out duration-300  text-center mt-1"></span>
+              <span
+                className={`border-b-2 border-orange-400 ${
+                  foodType === "FastFood" && "w-full"
+                } w-0 group-hover:w-full ease-out duration-300  text-center mt-1`}
+              ></span>
             </div>
           </div>
           <div className="group mr-8">
@@ -53,7 +61,11 @@ const NewFood = () => {
               Dessert
             </button>
             <div className="flex justify-center items-center ">
-              <span className="border-b-2 border-orange-400 w-0 group-hover:w-full ease-out duration-300  text-center mt-1"></span>
+              <span
+                className={`border-b-2 border-orange-400 ${
+                  foodType === "Dessert" && "w-full"
+                } w-0 group-hover:w-full ease-out duration-300  text-center mt-1`}
+              ></span>
             </div>
           </div>
           <div className="group mr-8">
@@ -66,28 +78,34 @@ const NewFood = () => {
               Drink
             </button>
             <div className="flex justify-center items-center ">
-              <span className="border-b-2 border-orange-400 w-0 group-hover:w-full ease-out duration-300  text-center mt-1"></span>
+              <span
+                className={`border-b-2 border-orange-400 ${
+                  foodType === "Drink" && "w-full"
+                } w-0 group-hover:w-full ease-out duration-300  text-center mt-1`}
+              ></span>
             </div>
           </div>
         </div>
       </div>
       <div className="py-10">
-        <p>Product Type - {foodType}</p>
-        <div>
+        <p className="text-orange-400 my-5 text-lg font-montserrat">
+          {foodType}
+        </p>
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {newFoodData
             .filter(
               (foodData) => foodData.category === foodType || foodType === "All"
             )
             .map((foodData) => (
               <>
-                <p>{foodData.name}</p>
-                {/* <NewFoodCard></NewFoodCard> */}
+                <NewFoodCard
+                  key={foodData.id}
+                  foodData={foodData}
+                ></NewFoodCard>
               </>
             ))}
         </div>
       </div>
-
-      <NewFoodCard></NewFoodCard>
     </div>
   );
 };
