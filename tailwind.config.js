@@ -23,5 +23,10 @@ module.exports = {
       },
     },
   },
+  extend: {
+    rotate: {
+      360: "360deg",
+    },
+  },
   plugins: [require("daisyui")],
 };

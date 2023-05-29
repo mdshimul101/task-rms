@@ -35,23 +35,25 @@ const FoodBanner = () => {
                 </button>
               </div>
             </div>
-            <img className="w-full " src={leftBgImg} alt="" />
+            <img
+              className="w-full min-h-[465px] object-cover"
+              src={leftBgImg}
+              alt=""
+            />
           </div>
         </div>
 
         <div className="w-full lg:w-1/2 px-2 lg:px-0 py-0 lg:py-2 grid grid-cols-1 content-between">
-          <div className=" md:flex lg:flex mb-2 ">
-            <div className=" relative mr-0 lg:mr-1 grow">
-              <div className="absolute w-full h-[310px]  md:w-full md:h-full lg:min-w-[350px] lg:h-[228px] bg-black/40">
+          <div className="flex-none md:flex  lg:flex mb-2 ">
+            <div className=" relative mr-0 md:mr-2 lg:mr-1 grow md:w-1/2">
+              <div className="absolute w-full h-[310px]  md:w-full md:h-full lg:min-w-[250px] lg:h-[228px] bg-black/40">
                 <div className="text-white  absolute mx-10  top-1/2 left-[5%]  translate-y-[-50%] text-left">
                   <h2 className="text-xl lg:text-2xl mb-3 font-montserrat font-semibold">
                     Chocolate Coffee
                   </h2>
-
                   <p className="font-montserrat font-medium text-justify">
                     35 items
                   </p>
-
                   <button className="text-orange-400 bg-gray-500/40 mt-5 px-2 py-1  font-montserrat font-semibold group ">
                     See More
                     <div className="flex justify-center items-center ">
@@ -61,20 +63,20 @@ const FoodBanner = () => {
                 </div>
               </div>
               <img
-                className="w-full h-[310px] md:w-full md:h-full lg:min-w-[350px] lg:h-[228px] object-cover"
+                className="w-full h-[310px] md:w-full md:h-full lg:min-w-[250px] lg:h-[228px] object-cover"
                 src={topLeftImg}
                 alt=""
               />
             </div>
-            <div className=" relative mt-2 lg:ml-1 lg:mt-0 grow">
-              <div className="absolute w-full h-[300px]  md:w-full md:h-full lg:min-w-[350px] lg:h-[228px] bg-black/40">
+            <div className=" relative my-2 lg:ml-1 md:my-0 lg:my-0 grow md:w-1/2">
+              <div className=" absolute w-full h-[300px]  md:w-full md:h-full lg:min-w-[250px] lg:h-[228px] bg-black/40">
                 <div className="text-white  absolute mx-10  top-1/2 left-[5%]  translate-y-[-50%] text-left">
                   <h2 className="text-xl lg:text-2xl mb-3 font-montserrat font-semibold">
                     Dessert
                   </h2>
 
                   <p className="font-montserrat font-medium text-justify">
-                    25 Dessert's items
+                    25 items
                   </p>
 
                   <button className="text-orange-400 bg-gray-500/40 mt-5 px-2 py-1  font-montserrat font-semibold group ">
@@ -86,15 +88,15 @@ const FoodBanner = () => {
                 </div>
               </div>
               <img
-                className="w-full h-[300px] md:w-full md:h-full lg:min-w-[350px] lg:h-[228px] object-cover"
+                className="w-full h-[300px] md:w-full md:h-full lg:min-w-[250px] lg:h-[228px] object-cover"
                 src={topRightImg}
                 alt=""
               />
             </div>
           </div>
-          <div className=" md:flex lg:flex">
-            <div className=" relative mr-0 lg:mr-1 grow">
-              <div className="absolute w-full h-[300px]  md:w-full md:h-full lg:min-w-[350px] lg:h-[228px] bg-black/40">
+          <div className="flex-none md:flex lg:flex">
+            <div className=" relative mr-0 md:mr-2 lg:mr-1 grow md:w-1/2">
+              <div className="absolute w-full h-[300px]  md:w-full md:h-full lg:min-w-[250px] lg:h-[228px] bg-black/40">
                 <div className="text-white  absolute mx-10  top-1/2 left-[5%]  translate-y-[-50%] text-left">
                   <h2 className="text-xl lg:text-2xl mb-3 font-montserrat font-semibold">
                     Fast Food
@@ -113,13 +115,13 @@ const FoodBanner = () => {
                 </div>
               </div>
               <img
-                className="w-full h-[300px] md:w-full md:h-full lg:min-w-[350px] lg:h-[228px] object-cover"
+                className="w-full h-[300px] md:w-full md:h-full lg:min-w-[250px] lg:h-[228px] object-cover"
                 src={bottomLeftImg}
                 alt=""
               />
             </div>
-            <div className=" relative my-2 lg:ml-1 lg:my-0 grow">
-              <div className="absolute w-full h-[300px]  md:w-full md:h-full lg:min-w-[350px] lg:h-[228px] bg-black/40">
+            <div className=" relative my-2 lg:ml-1 md:my-0 lg:my-0 grow md:w-1/2">
+              <div className="absolute w-full h-[300px]  md:w-full md:h-full lg:min-w-[250px] lg:h-[228px] bg-black/40">
                 <div className="text-white  absolute mx-10  top-1/2 left-[5%]  translate-y-[-50%] text-left">
                   <h2 className="text-xl lg:text-2xl mb-3 font-montserrat font-semibold">
                     Drink
@@ -138,7 +140,7 @@ const FoodBanner = () => {
                 </div>
               </div>
               <img
-                className="w-full h-[300px] md:w-full md:h-full lg:min-w-[350px] lg:h-[228px] object-cover"
+                className="w-full h-[300px] md:w-full md:h-full lg:min-w-[250px] lg:h-[228px] object-cover"
                 src={bottomRightImg}
                 alt=""
               />

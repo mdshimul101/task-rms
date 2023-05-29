@@ -3,7 +3,7 @@ import React from "react";
 const TopFood = ({ topFood }) => {
   const { image, title, element, price, review } = topFood;
   return (
-    <div className="min-w-80 border-[1px] border-gray-300 p-5 ">
+    <div className="min-w-80 border-[1px] border-gray-300 p-5">
       <div className="overflow-hidden">
         <div className="hover:scale-125 duration-500 ">
           <img src={image} alt="" className="w-full object-cover" />
