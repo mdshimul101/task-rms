@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import food from "../../../../src/assets/Images/food_gallery.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Navbar = () => {
@@ -10,6 +11,32 @@ const Navbar = () => {
       .then(() => {})
       .catch((error) => console.log(error.message));
   };
+  const navItem = [
+    {
+      title: "Home",
+      path: "/",
+    },
+    {
+      title: "Food",
+      path: "/food",
+    },
+    {
+      title: "Cart",
+      path: "/cart",
+    },
+    {
+      title: "Contact",
+      path: "/contact",
+    },
+    {
+      title: "About",
+      path: "/about",
+    },
+    {
+      title: "Login",
+      path: "/login",
+    },
+  ];
 
   const menuItems = (
     <>
@@ -133,12 +160,26 @@ const Navbar = () => {
                 {menuItems}
               </ul>
             </div>
-            <Link className="btn btn-primary text-white normal-case text-xl">
-              Food Gallery
-            </Link>
+            <div className="">
+              <Link className=" text-orange-400 normal-case text-xl flex">
+                <img className="m-2 w-10 h-10 object-fill" src={food} alt="" />
+                <span className="flex justify-center items-center">
+                  Food Gallery
+                </span>
+              </Link>
+            </div>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">{menuItems}</ul>
+            <ul className="menu menu-horizontal px-1">
+              {navItem.map((item) => (
+                <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4 group px-2">
+                  <Link to={item.path}>{item.title}</Link>
+                  <div className="flex justify-center items-center">
+                    <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+                  </div>
+                </div>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

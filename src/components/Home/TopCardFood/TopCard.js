@@ -8,7 +8,7 @@ const TopCard = ({ card }) => {
       <div className="absolute w-full h-full bg-black/50 rounded-xl text-white   ">
         <p className="font-bold text-2xl px-2 pt-4">{title}</p>
         <p className="px-2">{text}</p>
-        <button className="border-white bg-orange-400 text-white ml-3 px-2 py-1 rounded-2xl absolute bottom-4">
+        <button className="border-white bg-orange-400 text-white ml-3 px-3 py-1 rounded-2xl absolute bottom-4">
           Order Now
         </button>
       </div>

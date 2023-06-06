@@ -66,28 +66,28 @@ const SpecialService = () => {
       <div className="grid grid-cols-1  py-10  md:grid-cols-2 lg:grid-cols-4 gap-10">
         {services.map((service) => (
           <div>
-            <div className="relative m-w-80 group">
+            <div className="relative m-w-80 group group/edit">
               <div className="m-w-80  h-[400px]  border border-gray-400 ">
                 <div className="absolute w-full left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] py-20">
                   <div className="w-[50%] mx-auto">
                     <img
                       src={service.icon}
                       alt=""
-                      className="group-hover:hidden duration-500 ease-linear"
+                      className="group-hover:opacity-0 duration-300 ease-linear"
                     />
                   </div>
-                  <h3 className=" text-2xl text-gray-400 text-center font-raleWay font-thin mt-10 group-hover:hidden">
+                  <h3 className=" text-2xl text-gray-400 text-center font-raleWay font-thin mt-10 group-hover:opacity-0">
                     {service.name}
                   </h3>
                 </div>
               </div>
-              <div className="bg-black/50 absolute  bottom-0 left-0 right-0  w-full h-0 group-hover:h-full duration-[0.4s] ease-linear overflow-hidden">
+              <div className="bg-black/50 absolute  bottom-0 left-0 right-0  w-full h-full opacity-0 group-hover:opacity-100 duration-300 ease-linear overflow-hidden">
                 <img
                   src={service.image}
                   alt=""
                   className=" absolute top-1/2 left-1/2 text-center translate-x-[-50%] translate-y-[-50%] "
                 />
-                <p className="bg-[rgba(0,0,0,0.5)] py-24 w-full text-white text-xl font-raleWay font-medium px-3 absolute top-1/2  text-center  translate-y-[-50%]">
+                <p className="bg-[rgba(0,0,0,0.5)] py-24 w-full text-white text-xl font-raleWay font-medium px-3 absolute group-hover/edit:top-1/2 duration-300 ease-linear  top-[40%] text-center translate-y-[-50%]">
                   {service.text}
                 </p>
               </div>

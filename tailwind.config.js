@@ -21,6 +21,10 @@ module.exports = {
         montserrat: ["Montserrat", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
       },
+      backgroundImage: {
+        chooseFoodBg: "url('/src/assets/Images/Food Gallery.png')",
+        discountBanner: "url('/src/assets/Images/discountBanner.png')",
+      },
     },
   },
   extend: {

@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import NewFoodCard from "../NewFoodCard/NewFoodCard";
 import { newFoodData } from "../NewFoodData";
 const NewFood = () => {
-  const [foodType, setFoodType] = useState("All");
+  const [foodType, setFoodType] = useState("FastFood");
   return (
-    <div className="max-w-7xl mx-auto py-6 px-5 lg:px-0">
+    <div className="max-w-7xl mx-auto py-6 px-10 ">
       <div className="flex-none lg:flex w-full justify-between ">
         <div className="w-full lg:w-1/2">
           <div className="group">
@@ -91,7 +91,7 @@ const NewFood = () => {
         <p className="text-orange-400 my-5 text-lg font-montserrat">
           {foodType}
         </p>
-        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className=" grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {newFoodData
             .filter(
               (foodData) => foodData.category === foodType || foodType === "All"
