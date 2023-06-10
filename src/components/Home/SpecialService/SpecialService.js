@@ -69,14 +69,14 @@ const SpecialService = () => {
             <div className="relative m-w-80 group group/edit">
               <div className="m-w-80  h-[400px]  border border-gray-400 ">
                 <div className="absolute w-full left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] py-20">
-                  <div className="w-[50%] mx-auto">
+                  <div className="w-[50%] flex justify-center items-center mx-auto">
                     <img
                       src={service.icon}
                       alt=""
-                      className="group-hover:opacity-0 duration-300 ease-linear"
+                      className="max-h-48   duration-300 ease-linear"
                     />
                   </div>
-                  <h3 className=" text-2xl text-gray-400 text-center font-raleWay font-thin mt-10 group-hover:opacity-0">
+                  <h3 className=" text-2xl text-gray-400 text-center font-raleWay font-thin mt-10">
                     {service.name}
                   </h3>
                 </div>

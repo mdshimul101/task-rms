@@ -20,10 +20,15 @@ module.exports = {
         raleWay: ["Raleway", "sans - serifs"],
         montserrat: ["Montserrat", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        cookie: ["Cookie", "sans-serif"],
       },
       backgroundImage: {
         chooseFoodBg: "url('/src/assets/Images/Food Gallery.png')",
         discountBanner: "url('/src/assets/Images/discountBanner.png')",
+        reviewBg: "url('/src/assets/Images/review_bg.png')",
+      },
+      dropShadow: {
+        shadowMd: "0px 2px 20px 0px rgba(0, 0, 0, 0.16)",
       },
     },
   },

@@ -1,12 +1,11 @@
 import React from "react";
+import { servicesData } from "./ServicesData";
+
 import Slider from "react-slick";
-import leftArrow from "../../../../../src/assets/Images/Icon/leftArrow.png";
-import rightArrow from "../../../../../src/assets/Images/Icon/rightArrow.png";
-
-import { chooseFoodData } from "../ChooseFood/ChooseFoodData";
-import ChooseFoodCard from "./ChooseFoodCard";
-
-const ChooseFood = () => {
+import rightArrow from "../../../../src/assets//Images/Icon/rightArrow.png";
+import leftArrow from "../../../../src/assets/Images/Icon/leftArrow.png";
+import Service from "./Service";
+const Services = () => {
   const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     <img className=" w-10 bg-red-400 " src={leftArrow} alt="pre" {...props} />
   );
@@ -14,6 +13,8 @@ const ChooseFood = () => {
   const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
     <img src={rightArrow} alt="next" {...props} />
   );
+
+  // slick slider settings
   const settings = {
     dots: true,
     infinite: true,
@@ -27,7 +28,7 @@ const ChooseFood = () => {
     // nextArrow: <SlickArrowRight />,
     responsive: [
       {
-        breakpoint: 700,
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -44,21 +45,19 @@ const ChooseFood = () => {
     ],
   };
   return (
-    <section className="my-10 py-10 bg-gray-100">
-      <div className="text-center text-3xl text-orange-400 font-raleWay">
-        <h2>Choose Your Best Menu</h2>
+    <div>
+      <div className="w-11/12 mx-auto py-10">
+        <Slider {...settings} className=" flex justify-center items-center">
+          {servicesData.map((singleService) => (
+            <Service
+              key={singleService.id}
+              singleService={singleService}
+            ></Service>
+          ))}
+        </Slider>
       </div>
-      <div className="flex justify-center items-center">
-        <div className="w-11/12  ">
-          <Slider {...settings} className="m-10 ">
-            {chooseFoodData.map((card) => (
-              <ChooseFoodCard key={card.id} card={card}></ChooseFoodCard>
-            ))}
-          </Slider>
-        </div>
-      </div>
-    </section>
+    </div>
   );
 };
 
-export default ChooseFood;
+export default Services;
