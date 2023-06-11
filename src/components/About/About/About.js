@@ -1,116 +1,18 @@
 import React, { useState } from "react";
 import CountUp from "react-countup";
-import { FiStar } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import ScrollTrigger from "react-scroll-trigger";
 import Slider from "react-slick";
 import useTitle from "../../../hooks/useTitle";
-import { aboutShopData } from "./AboutData";
+import { aboutShopData, chefsData, reviewData } from "./AboutData";
 
 const About = () => {
   const [isClick, setClick] = useState("first");
   const [counterOn, serCounterOn] = useState("first");
+  const [open, setOpen] = useState(0);
+  console.log(open);
 
   useTitle("About");
-
-  const reviewData = [
-    {
-      id: 1,
-      text: (
-        <>
-          “I was so impressed with my breakfast this morning! I tried the Fried
-          Green Tomato Benedict and my boyfriend got the Crab Cakes Benedict. We
-          both finished our whole plates and were so impressed with the quality
-          of the food and the short amount of time it took to receive it. I will
-          definitely be back!” – Alina Monce.
-        </>
-      ),
-      image:
-        "https://ithemeslab.com/tempkits/foodkit/wp-content/uploads/2020/03/user-img.jpg",
-      name: "Alina Monce",
-      rating: (
-        <>
-          <div className="flex">
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-          </div>
-        </>
-      ),
-    },
-    {
-      id: 2,
-      text: (
-        <>
-          “This is always our breakfast stop before heading home from vacation.
-          Always delicious. Always great service. Always worth the stop.” –
-          Kristine Jasi.
-        </>
-      ),
-      image:
-        "https://images.pexels.com/photos/1008000/pexels-photo-1008000.jpeg?auto=compress&cs=tinysrgb&w=600",
-      name: "Kristine Jasi",
-      rating: (
-        <>
-          <div className="flex">
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-          </div>
-        </>
-      ),
-    },
-    {
-      id: 3,
-      text: (
-        <>
-          “Breakfast was delicious. Like a good homestyle country savory
-          breakfast (and Im from the south, thats saying a lot)… Enjoyed the
-          whole experience and definitely recommend this place for a place to
-          eat on the cape.” – Ronnie Eli
-        </>
-      ),
-      image:
-        "https://images.pexels.com/photos/837306/pexels-photo-837306.jpeg?auto=compress&cs=tinysrgb&w=600",
-      name: "Ronnie Eli",
-      rating: (
-        <>
-          <div className="flex">
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-          </div>
-        </>
-      ),
-    },
-    {
-      id: 4,
-      text: (
-        <>
-          “The absolute best red sauce. Weather on Pizza or Pasta, it’s honestly
-          delicious. Portions are huge and the staff is extremely friendly and
-          courteous.” – Rick Heri.
-        </>
-      ),
-      image:
-        "https://images.pexels.com/photos/3771089/pexels-photo-3771089.jpeg?auto=compress&cs=tinysrgb&w=600",
-      name: " Rick Heri",
-      rating: (
-        <>
-          <div className="flex">
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-            <FiStar className="text-yellow-400 mr-1" />
-          </div>
-        </>
-      ),
-    },
-  ];
 
   // slick slider settings
   const settings = {
@@ -120,7 +22,7 @@ const About = () => {
     slidesToShow: 2,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
@@ -141,20 +43,9 @@ const About = () => {
     ],
   };
 
-  const rattingStar = (
-    <>
-      <div className="flex">
-        <FiStar className="text-yellow-400" />
-        <FiStar className="text-yellow-400" />
-        <FiStar className="text-yellow-400" />
-        <FiStar className="text-yellow-400" />
-      </div>
-    </>
-  );
-
   return (
-    <section className="max-w-7xl mx-auto py-6 px-10">
-      <div className="group inline-block my-5">
+    <section className=" mx-auto py-6">
+      <div className="group inline-block my-5 px-9 md:px-24">
         <h1 className="text-2xl font-raleWay font-semibold text-gray-500">
           ABOUT US
           <div className="flex justify-start items-center">
@@ -162,8 +53,7 @@ const About = () => {
           </div>
         </h1>
       </div>
-
-      <div className="my-4 bg-gray-100 w-full  flex flex-col lg:flex-row ">
+      <div className="my-4 px-9 md:px-24 bg-gray-100 w-full  flex flex-col lg:flex-row ">
         <div className="w-full lg:w-1/2">
           <img
             className="w-full h-[300px] object-cover"
@@ -188,12 +78,11 @@ const About = () => {
           </div>
         </div>
       </div>
-
       <ScrollTrigger
         onEnter={() => serCounterOn(true)}
         onExit={() => serCounterOn(false)}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-32 px-9 md:px-24">
           {aboutShopData.map((item) => (
             <div className="w-full h-48 bg-white rounded-md shadow-md hover:shadow-inner flex justify-center items-center">
               <div className="text-center">
@@ -214,8 +103,7 @@ const About = () => {
           ))}
         </div>
       </ScrollTrigger>
-
-      <div className="bg-reviewBg bg-no-repeat bg-cover h-[450px] my-32 ">
+      <div className="bg-reviewBg bg-no-repeat bg-cover h-[480px] px-9 md:px-24">
         <Slider {...settings}>
           {reviewData.map((singleReview) => (
             <div>
@@ -246,6 +134,75 @@ const About = () => {
             </div>
           ))}
         </Slider>
+      </div>
+      {/* awarde banner */}
+      <div className="bg-fixedBg bg-no-repeat w-full h-[400px] md:h-[500px] bg-fixed relative mt-10">
+        <div className="bg-black/50 w-full h-full"></div>
+        <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-white ">
+          <h1 className="text-xl md:text-4xl font-poppins font-medium text-center leading-10">
+            We’re Awards Winning Restaurant. 5+ Years Of Experience In
+            Restaurant Services
+          </h1>
+        </div>
+      </div>
+      {/* Chefs section */}
+      <div className="my-20 px-9 md:px-24">
+        <div className="text-center group mb-10">
+          <h className="text-4xl font-raleWay inline-block text-orange-400">
+            Meet Our Experience & Master Chefs
+            <div className="flex justify-center items-center mt-3">
+              <span className="border-b-2 border-orange-500 w-24 group-hover:w-full ease-out duration-300  text-center mt-1"></span>
+            </div>
+          </h>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {chefsData.map((singleChef) => (
+            <div>
+              <div>
+                <img
+                  className="w-full h-60 object-cover"
+                  src={singleChef.image}
+                  alt="chefs"
+                />
+              </div>
+              <div className=" lg:px-2 py-5">
+                <div className="mb-4">
+                  <h4 className="font-montserrat text-lg font-semibold ">
+                    {singleChef.name}
+                  </h4>
+                  <p className="font-raleWay text-sm text-gray-400">
+                    {singleChef.position}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-justify text-gray-600 font-poppins ">
+                    {open === singleChef.id
+                      ? `${singleChef.text}`
+                      : `${singleChef.text.slice(1, 150)}`}
+
+                    {open === singleChef.id ? (
+                      <button
+                        onClick={() => setOpen(0)}
+                        className="text-orange-400 underline ml-1"
+                      >
+                        see less
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => setOpen(singleChef.id)}
+                        className="text-orange-400 underline ml-1"
+                      >
+                        see more
+                      </button>
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

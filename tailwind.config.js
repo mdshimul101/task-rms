@@ -26,6 +26,7 @@ module.exports = {
         chooseFoodBg: "url('/src/assets/Images/Food Gallery.png')",
         discountBanner: "url('/src/assets/Images/discountBanner.png')",
         reviewBg: "url('/src/assets/Images/review_bg.png')",
+        fixedBg: "url('/src/assets/Images/fixed_background.jpg')",
       },
       dropShadow: {
         shadowMd: "0px 2px 20px 0px rgba(0, 0, 0, 0.16)",
