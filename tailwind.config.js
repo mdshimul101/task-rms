@@ -27,6 +27,7 @@ module.exports = {
         discountBanner: "url('/src/assets/Images/discountBanner.png')",
         reviewBg: "url('/src/assets/Images/review_bg.png')",
         fixedBg: "url('/src/assets/Images/fixed_background.jpg')",
+        aboutBg: "url('/src/assets/Images/about-bg.png')",
       },
       dropShadow: {
         shadowMd: "0px 2px 20px 0px rgba(0, 0, 0, 0.16)",

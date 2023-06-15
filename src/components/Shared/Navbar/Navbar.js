@@ -40,7 +40,7 @@ const Navbar = () => {
 
   const menuItems = (
     <>
-      <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4  group px-2 ">
+      <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4  group px-2">
         <Link to="/">Home</Link>
         <div className="flex justify-center items-center">
           <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>

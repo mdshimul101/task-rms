@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { TfiLayoutGrid3, TfiLayoutGrid4, TfiViewGrid } from "react-icons/tfi";
 import NewFoodCard from "../NewFoodCard/NewFoodCard";
 import { newFoodData } from "../NewFoodData";
 const NewFood = () => {
   const [foodType, setFoodType] = useState("FastFood");
+  const [gridCol, setGridCol] = useState("grid-cols-4");
   return (
     <div className="max-w-7xl mx-auto py-6 px-10 ">
       <div className="flex-none lg:flex w-full justify-between ">
@@ -87,11 +89,39 @@ const NewFood = () => {
           </div>
         </div>
       </div>
+
+      <div className="mt-8 hidden lg:flex items-center">
+        <button
+          onClick={() => setGridCol("grid-cols-4")}
+          className={`mr-5 text-2xl text-gray-900 border ${
+            gridCol === "grid-cols-4" && "border-orange-400"
+          } p-2`}
+        >
+          <TfiLayoutGrid4 />
+        </button>
+        <button
+          onClick={() => setGridCol("grid-cols-3")}
+          className={`mr-5 text-2xl text-gray-900 border ${
+            gridCol === "grid-cols-3" && "border-orange-400"
+          } p-2`}
+        >
+          <TfiLayoutGrid3 />
+        </button>
+        <button
+          onClick={() => setGridCol("grid-cols-2")}
+          className={`mr-5 text-2xl text-gray-900 border ${
+            gridCol === "grid-cols-2" && "border-orange-400"
+          } p-2`}
+        >
+          <TfiViewGrid />
+        </button>
+      </div>
+
       <div className="py-10">
         <p className="text-orange-400 my-5 text-lg font-montserrat">
           {foodType}
         </p>
-        <div className=" grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className={` grid gap-8 grid-cols-1 md:grid-cols-2 lg:${gridCol}`}>
           {newFoodData
             .filter(
               (foodData) => foodData.category === foodType || foodType === "All"

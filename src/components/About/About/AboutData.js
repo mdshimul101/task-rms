@@ -159,3 +159,24 @@ export const chefsData = [
     text: "Carme Ruscalleda is the only lady to be considered one of the best chefs in the world that have been awarded 7 Michelin stars so far. She is the chef with most Michelin stars among female chefs.",
   },
 ];
+
+export const advantageData = [
+  {
+    id: 1,
+    title: "Free Home Delivery",
+    text: "Provide free home delivery for all product over $100",
+    image: "https://htmldemo.net/obrien/obrien/assets/images/icons/icon-1.png",
+  },
+  {
+    id: 2,
+    title: "Quality Products",
+    text: "We ensure our product quality all times",
+    image: "https://htmldemo.net/obrien/obrien/assets/images/icons/icon-2.png",
+  },
+  {
+    id: 3,
+    title: "Online Support",
+    text: "To satisfy our customer we try to give support online",
+    image: "https://htmldemo.net/obrien/obrien/assets/images/icons/icon-3.png",
+  },
+];

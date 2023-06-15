@@ -3,9 +3,9 @@ import React from "react";
 const TopFood = ({ topFood }) => {
   const { image, title, element, price } = topFood;
   return (
-    <div className="min-w-80 border-[1px] border-orange-400 p-5">
+    <div className="min-w-80 border-[1px] border-orange-400 p-4">
       <div className="overflow-hidden">
-        <div className="hover:scale-125 duration-500 ">
+        <div className="hover:scale-110 duration-500 ">
           <img src={image} alt="" className="w-full object-cover" />
         </div>
       </div>
@@ -17,7 +17,7 @@ const TopFood = ({ topFood }) => {
         <div className="text-red-500 font-raleWay flex flex-col justify-center items-center font-semibold">
           <h4 className="">Price : {price}</h4>
           {/* <h3 className="">Review : {review}</h3> */}
-          <button className="font-montserrat border-orange-500 bg-orange-400 hover:bg-orange-500 text-white mt-2 px-3 py-1 rounded-2xl">
+          <button className="font-montserrat border hover:border-orange-500 bg-white hover:bg-orange-500 duration-150 ease-linear text-orange-400 hover:text-white mt-2 px-3 py-1 ">
             Order Now
           </button>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import useTitle from "../../../hooks/useTitle";
+import Discount from "../Discount/Discount";
 import FeatureProducts from "../FeatureProducts/FeatureProducts";
 import FoodGalleryHome from "../FoodGalleryHome/FoodGalleryHome";
 import HomeBanner from "../HomeBanner/HomeBanner";
@@ -17,6 +18,7 @@ const Home = () => {
       <Slider />
       <TopCards />
       <TopFoods />
+      <Discount />
       <SpecialMenu />
       <FeatureProducts />
       <SpecialService />
