@@ -20,23 +20,47 @@ export const featureItems = [
     image:
       "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     name: "Italian Pasta",
-    element: "Chili, cheese, onion, Vegetable",
+    element: "Chili, Cheese, Onion, Vegetable",
     price: "$ 6",
   },
   {
     id: 4,
     image:
-      "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    name: "Italian Pasta",
-    element: "Chili, cheese, onion, Vegetable",
-    price: "$ 6",
+      "https://images.pexels.com/photos/14000579/pexels-photo-14000579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    name: "Chocolate Bar",
+    element: "Milk, Chocolate, Sugar",
+    price: "$ 2",
   },
   {
     id: 5,
     image:
-      "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    name: "Italian Pasta",
-    element: "Chili, cheese, onion, Vegetable",
-    price: "$ 6",
+      "https://images.pexels.com/photos/4551975/pexels-photo-4551975.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    name: "Apple Beetroot juice",
+    element: "Apple, Beetroot, Lemon, Sugar",
+    price: "$ 4",
+  },
+  {
+    id: 6,
+    image:
+      "https://images.pexels.com/photos/2684257/pexels-photo-2684257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    name: "Strawberries Juice",
+    element: "Strawberries, Lemon, Sugar",
+    price: "$ 3",
+  },
+  {
+    id: 7,
+    image:
+      "https://images.pexels.com/photos/2673353/pexels-photo-2673353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    name: "Chicken Rost",
+    element: "Chicken, Oil, Onion, sold",
+    price: "$ 12",
+  },
+  {
+    id: 8,
+    image:
+      "https://images.pexels.com/photos/7986366/pexels-photo-7986366.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    name: "Chicken Fried Rice",
+    element: "Chicken,Vegetable, Oil, Onion, egg",
+    price: "$ 12",
   },
 ];

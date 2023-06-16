@@ -11,9 +11,9 @@ import {
   chefsData,
   reviewData,
 } from "./AboutData";
+import FQA from "./FQA";
 
 const About = () => {
-  const [isClick, setClick] = useState("first");
   const [counterOn, serCounterOn] = useState("first");
   const [open, setOpen] = useState(0);
   console.log(open);
@@ -300,8 +300,12 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      {/* FQA */}
+      <FQA />
+
       {/* need help */}
-      <div className="mt-28 px-9 md:px-24 py-20 bg-orange-100/30">
+      <div className="mt-24 px-9 md:px-24 py-20 bg-orange-100/30">
         <div className="flex flex-col md:flex-row justify-between">
           <div>
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold font-poppins">
