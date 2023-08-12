@@ -96,7 +96,7 @@ const cartReducer = (state = initialState, action) => {
         }
       });
     case REMOVE_PRODUCT_TO_CART:
-      return state.map((product) => {
+      const newRemoveState = state.map((product) => {
         if (product.id === payload) {
           if (product.cart > 0) {
             return {
@@ -111,6 +111,22 @@ const cartReducer = (state = initialState, action) => {
           return product;
         }
       });
+      return newRemoveState.filter((product) => product.cart !== 0);
+    // return state.map((product) => {
+    //   if (product.id === payload) {
+    //     if (product.cart > 0) {
+    //       return {
+    //         ...product,
+    //         quantity: product.quantity + 1,
+    //         cart: product.cart - 1,
+    //       };
+    //     } else {
+    //       return product;
+    //     }
+    //   } else {
+    //     return product;
+    //   }
+    // });
     case DELETE_PRODUCT_TO_CART:
       const newState = state.map((product) => {
         if (product.id === payload.productId) {

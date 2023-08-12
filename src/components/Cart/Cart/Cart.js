@@ -37,7 +37,7 @@ const Cart = () => {
         Shopping Cart
       </h1>
 
-      {cartProducts.length > 0 ? (
+      {cartProducts.length ? (
         <div className="mt-10">
           <div className="hidden md:flex text-xl border-b-[2px] border-gray-600 pb-4 ">
             <h3 className="basis-1/2">product</h3>
@@ -49,8 +49,13 @@ const Cart = () => {
       ) : (
         <p>You don't cart any product</p>
       )}
-      {cartProducts.map((singleCart) => (
-        <CartItem key={singleCart.id} singleCart={singleCart}></CartItem>
+      {cartProducts.map(
+        (singleCart) =>
+          singleCart.cart ? (
+            <CartItem key={singleCart.id} singleCart={singleCart}></CartItem>
+          ) : (
+            ""
+          )
         // <div className="mt-10 flex flex-col p-5 md:flex-row border  border-orange-500">
         //   <div className="flex basis-1/2">
         //     <img
@@ -98,7 +103,7 @@ const Cart = () => {
         //     </div>
         //   </div>
         // </div>
-      ))}
+      )}
 
       <div className="mt-20">
         <div className="w-full md:w-1/2 mx-auto  border border-orange-500 p-5">
