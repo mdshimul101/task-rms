@@ -8,12 +8,17 @@ import router from "./Routes/Routes/Routes";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 function App() {
   return (
-    <div>
-      <RouterProvider router={router}></RouterProvider>
-      <Toaster></Toaster>
-    </div>
+    <Provider store={store}>
+      <div>
+        <RouterProvider router={router}></RouterProvider>
+        <Toaster></Toaster>
+      </div>
+    </Provider>
   );
 }
 

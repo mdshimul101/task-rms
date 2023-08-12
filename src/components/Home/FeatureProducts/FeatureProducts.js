@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { MdOutlineFavoriteBorder, MdOutlineShoppingCart } from "react-icons/md";
 import { TfiLayoutGrid3, TfiLayoutGrid4, TfiViewGrid } from "react-icons/tfi";
-import { PhotoProvider, PhotoView } from "react-photo-view";
+import FeatureProduct from "./FeatureProduct";
 import { featureItems } from "./FeatureProductsData";
 
 const FeatureProducts = () => {
@@ -50,45 +49,7 @@ const FeatureProducts = () => {
           className={`grid grid-cols-1  py-7  md:grid-cols-2  gap-7 lg:${gridCol}`}
         >
           {featureItems.map((item) => (
-            <div className="m-w-80">
-              <div className="overflow-hidden">
-                <div className="hover:scale-110 duration-500">
-                  <PhotoProvider>
-                    <PhotoView src={item.image}>
-                      <img
-                        src={item.image}
-                        alt=""
-                        className="w-full h-full object-cover cursor-zoom-in"
-                      />
-                    </PhotoView>
-                  </PhotoProvider>
-                </div>
-              </div>
-
-              <div className="p-4 bg-orange-50">
-                <h2 className="text-2xl font-raleWay text-gray-700">
-                  {item.name}
-                </h2>
-                <p className=" font-raleWay font-thin text-gray-500">
-                  {item.element}
-                </p>
-                <div className="flex justify-between items-center mt-5 ">
-                  <p className="text-gray-500 font-poppins">{item.price}</p>
-
-                  <div>
-                    <button className="mr-5 text-gray-800 hover:text-white bg-white hover:bg-orange-400 p-3 rounded-full duration-[400ms] hover:rotate-[360deg]">
-                      {" "}
-                      <MdOutlineFavoriteBorder className=" text-[24px] rotate-0 " />
-                    </button>
-
-                    <button className="text-gray-800 hover:text-white bg-white hover:bg-orange-400 p-3 rounded-full duration-[400ms] hover:rotate-[360deg]">
-                      {" "}
-                      <MdOutlineShoppingCart className=" text-[24px] rotate-0 " />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <FeatureProduct item={item}></FeatureProduct>
           ))}
         </div>
       </div>
