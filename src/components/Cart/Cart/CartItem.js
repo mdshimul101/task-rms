@@ -59,7 +59,6 @@ const CartItem = ({ singleCart }) => {
 
             <button
               onClick={() => handleIncrease(singleCart.id, singleCart.quantity)}
-              disabled={singleCart.quantity < 0}
             >
               <AiOutlinePlusCircle />
             </button>

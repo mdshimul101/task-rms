@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 import { MdOutlineFavoriteBorder, MdOutlineShoppingCart } from "react-icons/md";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +13,17 @@ const FeatureProduct = ({ item }) => {
 
   const handleAddToCart = (productId, productData) => {
     dispatch(addToCart(productId, { ...productData, cart: 0 }));
+    if (productData.cart >= 0) {
+      toast.success(`${productData.name} is added to cart successfully`);
+    }
+    const findCartProduct = cartProducts.find(
+      (product) => product.id === productId
+    );
+    if (findCartProduct?.quantity === 0) {
+      toast.error(`${findCartProduct.name} is not available at the moment`);
+    } else {
+      toast.success(`${productData.name} is added to cart successfully`);
+    }
   };
   return (
     <div>
