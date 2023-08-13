@@ -6,6 +6,7 @@ import {
 } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 
+import { toast } from "react-hot-toast";
 import {
   addProductInCart,
   deleteProductToCart,
@@ -15,8 +16,11 @@ import {
 const CartItem = ({ singleCart }) => {
   const dispatch = useDispatch();
 
-  const handleIncrease = (id) => {
+  const handleIncrease = (id, quantity) => {
     dispatch(addProductInCart(id));
+    if (quantity === 0) {
+      toast.error(`${singleCart.name} is not available at the moment`);
+    }
   };
   const handleDecrease = (id) => {
     dispatch(removeProductToCart(id));
@@ -52,7 +56,11 @@ const CartItem = ({ singleCart }) => {
               <AiOutlineMinusCircle />
             </button>
             <p className="px-5 "> {singleCart.cart}</p>
-            <button onClick={() => handleIncrease(singleCart.id)}>
+
+            <button
+              onClick={() => handleIncrease(singleCart.id, singleCart.quantity)}
+              disabled={singleCart.quantity < 0}
+            >
               <AiOutlinePlusCircle />
             </button>
           </div>
