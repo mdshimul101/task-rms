@@ -19,12 +19,29 @@ const Login = () => {
 
   const [loginError, setLoginError] = useState("");
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
 
   const location = useLocation();
   const navigate = useNavigate();
 
   const from = location.state?.from?.pathname || "/";
+
+  const handleGoogleSignIn = () => {
+    setLoginError("");
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+
+        navigate(from, { replace: true });
+        toast.success("User Login Successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoginError(error.message);
+        toast.error(loginError ? loginError : error.message);
+      });
+  };
 
   const handleLogin = (data) => {
     setLoginError("");
@@ -38,12 +55,12 @@ const Login = () => {
       })
       .catch((error) => {
         setLoginError(error.message);
-        toast.error(loginError ? loginError : "Something Wrong");
+        toast.error(loginError ? loginError : error.message);
       });
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-5 lg:py-20 px-4 lg:px-4">
+    <div className="max-w-7xl mx-auto py-28 lg:py-40 px-4 lg:px-4">
       <div className="lg:flex justify-between overflow-hidden">
         <div className="w-full lg:w-[47%] mb-5 lg:mb-0 hover:scale-105 duration-300">
           <div
@@ -162,7 +179,10 @@ const Login = () => {
 
               <div className="flex justify-center items-center bg-orange-200 w-full my-4 lg:w-1/2 mx-auto">
                 <FcGoogle />
-                <button className="px-3 py-2 text-slate-500  font-raleWay font-semibold">
+                <button
+                  onClick={handleGoogleSignIn}
+                  className="px-3 py-2 text-slate-500  font-raleWay font-semibold"
+                >
                   Login with Google
                 </button>
               </div>

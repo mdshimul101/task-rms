@@ -50,7 +50,7 @@ const About = () => {
   };
 
   return (
-    <section className=" mx-auto pt-6">
+    <section className=" mx-auto pt-32">
       <div className="group inline-block my-5 px-9 md:px-24">
         <h1 className="text-2xl font-raleWay font-semibold text-gray-500">
           ABOUT US

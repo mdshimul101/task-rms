@@ -1,11 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import useTitle from "../../../hooks/useTitle";
-import {
-  addProductInCart,
-  deleteProductToCart,
-  removeProductToCart,
-} from "../../../redux/carts/action";
 import CartItem from "./CartItem";
 
 const Cart = () => {
@@ -14,15 +9,15 @@ const Cart = () => {
   const dispatch = useDispatch();
   console.log("from cart page", cartProducts);
 
-  const handleIncrease = (id) => {
-    dispatch(addProductInCart(id));
-  };
-  const handleDecrease = (id) => {
-    dispatch(removeProductToCart(id));
-  };
-  const handleDelete = (id, cart) => {
-    dispatch(deleteProductToCart(id, cart));
-  };
+  // const handleIncrease = (id) => {
+  //   dispatch(addProductInCart(id));
+  // };
+  // const handleDecrease = (id) => {
+  //   dispatch(removeProductToCart(id));
+  // };
+  // const handleDelete = (id, cart) => {
+  //   dispatch(deleteProductToCart(id, cart));
+  // };
 
   const totalAmount = () => {
     return cartProducts.reduce(
@@ -32,7 +27,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="mx-5 md:mx-[90px] py-10 ">
+    <div className="mx-5 md:mx-[90px] py-10 pt-32">
       <h1 className="text-2xl font-poppins font-semibold text-gray-700">
         Shopping Cart
       </h1>
@@ -40,7 +35,7 @@ const Cart = () => {
       {cartProducts.length ? (
         <div className="mt-10">
           <div className="hidden md:flex text-xl border-b-[2px] border-gray-600 pb-4 ">
-            <h3 className="basis-1/2">product</h3>
+            <h3 className="basis-1/2">Product</h3>
             <h3 className="basis-1/6">Price</h3>
             <h3 className="basis-1/6">Quantity</h3>
             <h3 className="basis-1/6">Total</h3>

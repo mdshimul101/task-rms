@@ -42,7 +42,7 @@ function App() {
   };
 
   return (
-    <div className="max-w-[1280px] h-[400px] md:h-[550px] lg:h-[650px] w-full m-auto py-10 px-4 relative group">
+    <div className=" max-w-[1280px] h-[400px] md:h-[550px] lg:h-[650px] w-full m-auto py-10 px-4 relative group">
       <div
         style={{
           backgroundImage: `url(${slides[currentIndex]?.url})`,

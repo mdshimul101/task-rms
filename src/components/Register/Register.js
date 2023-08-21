@@ -1,10 +1,10 @@
 import { getAuth } from "firebase/auth";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import { RiErrorWarningFill } from "react-icons/ri";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import app from "../../firebase/firebase.config";
 
@@ -21,9 +21,30 @@ const Register = () => {
     handleSubmit,
   } = useForm();
 
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
+  const [loginError, setLoginError] = useState("");
 
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
+
+  const handleGoogleSignIn = () => {
+    setLoginError("");
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+
+        navigate(from, { replace: true });
+        toast.success("User Login Successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoginError(error.message);
+        toast.error(loginError ? loginError : error.message);
+      });
+  };
 
   const handleRegister = (data) => {
     console.log(data.userName);
@@ -31,6 +52,7 @@ const Register = () => {
     createUser(data.userEmail, data.userPassword)
       .then((result) => {
         const user = result.user;
+        console.log(user);
 
         toast.success("user create successfully");
         const userInfo = {
@@ -58,7 +80,7 @@ const Register = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-5 lg:py-20 px-4 lg:px-4">
+    <div className="max-w-7xl mx-auto py-28 lg:py-40 px-4 lg:px-4">
       <div className="lg:flex justify-between overflow-hidden">
         <div className="w-full lg:w-[47%] mb-5 lg:mb-0 hover:scale-105 duration-300">
           <div
@@ -188,7 +210,10 @@ const Register = () => {
 
               <div className="flex justify-center items-center bg-orange-200 w-full my-4 lg:w-1/2 mx-auto">
                 <FcGoogle />
-                <button className="px-3 py-2 text-slate-500  font-raleWay font-semibold">
+                <button
+                  onClick={handleGoogleSignIn}
+                  className="px-3 py-2 text-slate-500  font-raleWay font-semibold"
+                >
                   Login with Google
                 </button>
               </div>

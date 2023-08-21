@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <>
       <div
-        className=""
+        className="pt-16"
         style={{
           backgroundImage: `url(${imageUrl})`,
           backgroundRepeat: "no-repeat",

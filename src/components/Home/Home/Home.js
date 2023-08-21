@@ -14,7 +14,7 @@ import TopFoods from "../TopFood/TopFoods";
 const Home = () => {
   useTitle("Home");
   return (
-    <div>
+    <div className="pt-20">
       <Slider />
       <TopCards />
       <TopFoods />

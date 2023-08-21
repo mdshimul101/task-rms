@@ -3,6 +3,7 @@ import { toast } from "react-hot-toast";
 import { MdOutlineFavoriteBorder, MdOutlineShoppingCart } from "react-icons/md";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { useDispatch, useSelector } from "react-redux";
+import { addProductToFavorite } from "../../../redux/Favorites/action";
 import { addToCart } from "../../../redux/carts/action";
 
 const FeatureProduct = ({ item }) => {
@@ -25,6 +26,12 @@ const FeatureProduct = ({ item }) => {
       toast.success(`${productData.name} is added to cart successfully`);
     }
   };
+
+  const handleAddProductToFavorite = (productId, productData) => {
+    dispatch(addProductToFavorite(productId, { ...productData, favorite: 1 }));
+    toast.success(`${productData.name} is added to cart successfully`);
+  };
+
   return (
     <div>
       <div className="m-w-80">
@@ -51,7 +58,10 @@ const FeatureProduct = ({ item }) => {
             <p className="text-gray-500 font-poppins"> $ {price}</p>
 
             <div>
-              <button className="mr-5 text-gray-800 hover:text-white bg-white hover:bg-orange-400 p-3 rounded-full duration-[400ms] hover:rotate-[360deg]">
+              <button
+                onClick={() => handleAddProductToFavorite(id, item)}
+                className="mr-5 text-gray-800 hover:text-white bg-white hover:bg-orange-400 p-3 rounded-full duration-[400ms] hover:rotate-[360deg]"
+              >
                 {" "}
                 <MdOutlineFavoriteBorder className=" text-[24px] rotate-0 " />
               </button>

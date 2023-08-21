@@ -1,10 +1,24 @@
 import React, { useContext } from "react";
+import { BsCart3 } from "react-icons/bs";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import food from "../../../../src/assets/Images/food_gallery.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Navbar = () => {
   const { logOut, userData } = useContext(AuthContext);
+  const cartProducts = useSelector((state) => state.addToCart);
+  const cartFavorites = useSelector((state) => state.addToFavorite);
+  const totalCart = cartProducts?.reduce(
+    (total, product) => total + product.cart,
+    0
+  );
+
+  const totalFavorite = cartFavorites?.reduce(
+    (total, product) => total + product.favorite,
+    0
+  );
 
   const handleLogout = () => {
     logOut()
@@ -21,10 +35,6 @@ const Navbar = () => {
       path: "/food",
     },
     {
-      title: "Cart",
-      path: "/cart",
-    },
-    {
       title: "Contact",
       path: "/contact",
     },
@@ -36,11 +46,19 @@ const Navbar = () => {
       title: "Login",
       path: "/login",
     },
+    {
+      title: "Favorite",
+      path: "/favorite",
+    },
+    {
+      title: "Cart",
+      path: "/cart",
+    },
   ];
 
   const menuItems = (
     <>
-      <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4  group px-2">
+      <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4  group px-2 ">
         <Link to="/">Home</Link>
         <div className="flex justify-center items-center">
           <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
@@ -132,7 +150,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-orange-100">
+    <div className="bg-orange-100 fixed z-30 w-full">
       <div className="max-w-7xl mx-auto">
         <div className="navbar py-2">
           <div className="navbar">
@@ -173,10 +191,97 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">
               {navItem.map((item) => (
                 <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4 group px-2">
-                  <Link to={item.path}>{item.title}</Link>
-                  <div className="flex justify-center items-center">
-                    <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
-                  </div>
+                  {/* <Link to={item.path}>{item.title}</Link>
+                  {<span>{totalCart}</span>} */}
+                  {item.title === "Cart" ? (
+                    <>
+                      <div className="flex">
+                        <Link
+                          to={item.path}
+                          className="flex justify-center items-center ml-3 text-xl"
+                        >
+                          <BsCart3 />
+                        </Link>
+
+                        {totalCart > 0 ? (
+                          <span className="bg-blue-400 ml-[-5px] mt-[-5px] text-white text-xs  w-5 h-5 p-1 rounded-full flex justify-center items-center">
+                            <p className="font-bold"> {totalCart}</p>
+                          </span>
+                        ) : (
+                          <span className=" ml-[-5px] mt-[-5px]  text-xs  w-5 h-5 p-1 rounded-full flex justify-center items-center"></span>
+                        )}
+                      </div>
+                    </>
+                  ) : (
+                    // <Link to={item.path}>{item.title}</Link>
+                    ""
+                  )}
+                  {item.title === "Favorite" ? (
+                    <>
+                      <div className="flex">
+                        <Link
+                          to={item.path}
+                          className="flex justify-center items-center ml-4 text-xl"
+                        >
+                          <MdOutlineFavoriteBorder />
+                        </Link>
+
+                        {totalFavorite > 0 ? (
+                          <span className="bg-blue-400 ml-[-5px] mt-[-5px] text-white text-xs  w-5 h-5 p-1 rounded-full flex justify-center items-center">
+                            <p className="font-bold"> {totalFavorite}</p>
+                          </span>
+                        ) : (
+                          <span className=" ml-[-5px] mt-[-5px]  text-xs  w-5 h-5 p-1 rounded-full flex justify-center items-center"></span>
+                        )}
+                      </div>
+                    </>
+                  ) : (
+                    // <Link to={item.path}>{item.title}</Link>
+                    ""
+                  )}
+                  {item.title === "Login" ? (
+                    <>
+                      {userData?.uid ? (
+                        <Link
+                          onClick={handleLogout}
+                          className="border-2 border-white px-3 py-1"
+                        >
+                          logout
+                        </Link>
+                      ) : (
+                        <>
+                          <Link to="/login">Login</Link>
+                        </>
+                      )}
+                    </>
+                  ) : (
+                    ""
+                  )}
+                  {item.title === "Login" ||
+                  item.title === "Cart" ||
+                  item.title === "Favorite" ? (
+                    ""
+                  ) : (
+                    <>
+                      <Link to={item.path}>{item.title}</Link>
+                    </>
+                  )}
+
+                  {item.title === "Login" ? (
+                    <>
+                      {userData?.uid ? (
+                        ""
+                      ) : (
+                        <div className="flex justify-center items-center">
+                          <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <div className="flex justify-center items-center">
+                      <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+                    </div>
+                  )}
                 </div>
               ))}
             </ul>

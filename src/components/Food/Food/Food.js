@@ -11,7 +11,7 @@ const Food = () => {
   useTitle("Food");
 
   return (
-    <div className="">
+    <div className="pt-24">
       <FoodBanner />
       <NewFood />
       <ChooseFood />
