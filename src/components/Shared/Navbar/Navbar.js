@@ -129,7 +129,36 @@ const Navbar = () => {
         </div>
       </div>
       <div className="text-orange-400 hover:text-orange-500 py-2 lg:py-4 group px-2 ">
-        <Link to="/cart">Cart</Link>
+        <div className="flex">
+          <Link to="/favorite" className="text-xl">
+            <MdOutlineFavoriteBorder />
+          </Link>
+          {totalFavorite > 0 ? (
+            <span className="bg-blue-400 ml-[-5px] mt-[-5px] text-white text-xs  w-5 h-5 p-1 rounded-full flex justify-center items-center">
+              <p className="font-bold"> {totalFavorite}</p>
+            </span>
+          ) : (
+            <span className=" ml-[-5px] mt-[-5px]  text-xs  w-5 h-5 p-1 rounded-full flex justify-center items-center"></span>
+          )}
+        </div>
+        <div className="flex justify-center items-center">
+          <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
+        </div>
+      </div>
+      <div className=" text-orange-400 hover:text-orange-500 py-2 lg:py-4 group px-2 ">
+        <div className="flex">
+          <Link to="/cart" className="text-xl">
+            {" "}
+            <BsCart3 />
+          </Link>
+          {totalCart > 0 ? (
+            <span className="bg-blue-400 ml-[-5px] mt-[-5px]  text-white text-xs  w-5 h-5 p-1 rounded-full flex justify-center items-center">
+              <p className="font-bold"> {totalCart}</p>
+            </span>
+          ) : (
+            <span className=" ml-[-5px] mt-[-5px]  text-xs  w-5 h-5 p-1 rounded-full flex justify-center items-center"></span>
+          )}
+        </div>
         <div className="flex justify-center items-center">
           <div className=" mt-1 w-0 h-[2px] bg-orange-400  group-hover:w-full ease-out duration-300"></div>
         </div>
