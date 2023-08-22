@@ -1,10 +1,37 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 import { MdOutlineFavoriteBorder, MdOutlineShoppingCart } from "react-icons/md";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductToFavorite } from "../../../redux/Favorites/action";
+import { addToCart } from "../../../redux/carts/action";
 import { topFeature, topSell, topTrends } from "./FoodTopData";
 
 const FoodTop = () => {
+  const cartProducts = useSelector((state) => state.addToCart);
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (productId, productData) => {
+    dispatch(addToCart(productId, { ...productData, cart: 0 }));
+    if (productData.cart >= 0) {
+      toast.success(`${productData.name} is added to cart successfully`);
+    }
+    const findCartProduct = cartProducts.find(
+      (product) => product.id === productId
+    );
+    if (findCartProduct?.quantity === 0) {
+      toast.error(`${findCartProduct.name} is not available at the moment`);
+    } else {
+      toast.success(`${productData.name} is added to cart successfully`);
+    }
+  };
+
+  const handleAddProductToFavorite = (productId, productData) => {
+    dispatch(addProductToFavorite(productId, { ...productData, favorite: 1 }));
+    toast.success(`${productData.name} is added to cart successfully`);
+  };
   return (
     <div className="max-w-7xl mx-auto py-6 px-10">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -38,12 +65,18 @@ const FoodTop = () => {
                     $ {trend.price}
                   </p>
                   <div className="text-orange-400 text-xl group">
-                    <button className="mr-4 text-gray-800 hover:text-orange-400  bg-white rounded-full duration-[400ms] hover:rotate-[360deg]">
-                      {" "}
+                    <button
+                      onClick={() =>
+                        handleAddProductToFavorite(trend.id, trend)
+                      }
+                      className="mr-4 text-gray-800 hover:text-orange-400  bg-white rounded-full duration-[400ms] hover:rotate-[360deg]"
+                    >
                       <MdOutlineFavoriteBorder className=" text-[20px] rotate-0 " />
                     </button>
-                    <button className="text-gray-800 hover:text-orange-400 bg-white  rounded-full duration-[400ms] hover:rotate-[360deg]">
-                      {" "}
+                    <button
+                      onClick={() => handleAddToCart(trend.id, trend)}
+                      className="text-gray-800 hover:text-orange-400 bg-white  rounded-full duration-[400ms] hover:rotate-[360deg]"
+                    >
                       <MdOutlineShoppingCart className=" text-[20px] rotate-0 " />
                     </button>
                   </div>
@@ -82,13 +115,19 @@ const FoodTop = () => {
                     $ {trend.price}
                   </p>
                   <div className="text-orange-400 text-xl group">
-                    <button className="mr-4 text-gray-800 hover:text-orange-400  bg-white rounded-full duration-[400ms] hover:rotate-[360deg]">
-                      {" "}
+                    <button
+                      onClick={() =>
+                        handleAddProductToFavorite(trend.id, trend)
+                      }
+                      className="mr-4 text-gray-800 hover:text-orange-400  bg-white rounded-full duration-[400ms] hover:rotate-[360deg]"
+                    >
                       <MdOutlineFavoriteBorder className=" text-[20px] rotate-0 " />
                     </button>
                     <button className="text-gray-800 hover:text-orange-400 bg-white  rounded-full duration-[400ms] hover:rotate-[360deg]">
-                      {" "}
-                      <MdOutlineShoppingCart className=" text-[20px] rotate-0 " />
+                      <MdOutlineShoppingCart
+                        onClick={() => handleAddToCart(trend.id, trend)}
+                        className=" text-[20px] rotate-0 "
+                      />
                     </button>
                   </div>
                 </div>
@@ -127,12 +166,18 @@ const FoodTop = () => {
                   </p>
                   <div className="text-orange-400 text-xl group">
                     <button className="mr-4 text-gray-800 hover:text-orange-400  bg-white rounded-full duration-[400ms] hover:rotate-[360deg]">
-                      {" "}
-                      <MdOutlineFavoriteBorder className=" text-[20px] rotate-0 " />
+                      <MdOutlineFavoriteBorder
+                        onClick={() =>
+                          handleAddProductToFavorite(trend.id, trend)
+                        }
+                        className=" text-[20px] rotate-0 "
+                      />
                     </button>
                     <button className="text-gray-800 hover:text-orange-400 bg-white  rounded-full duration-[400ms] hover:rotate-[360deg]">
-                      {" "}
-                      <MdOutlineShoppingCart className=" text-[20px] rotate-0 " />
+                      <MdOutlineShoppingCart
+                        onClick={() => handleAddToCart(trend.id, trend)}
+                        className=" text-[20px] rotate-0 "
+                      />
                     </button>
                   </div>
                 </div>
