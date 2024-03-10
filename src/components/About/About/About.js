@@ -247,29 +247,29 @@ const About = () => {
         ))}
       </div>
       {/* Future Of Tradition */}
-      <div className="bg-reviewBg bg-no-repeat mt-32 lg:mt-32 mb-10 px-9 md:px-24 flex flex-col lg:flex-row">
+      <div className="bg-reviewBg bg-no-repeat mt-16 lg:mt-32 mb-10 px-3 md:px-24 flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/2">
-          <div className="flex">
-            <div className="p-5">
+          <div className="flex flex-col lg:flex-row mx-5 md:mx-0">
+            <div className="mx-auto lg:mx-3">
               <div className=" rounded-lg ">
                 <img
-                  className="rounded-lg mt-14  hover:scale-110 duration-200 ease-linear"
-                  src="https://ithemeslab.com/tempkits/foodkit/wp-content/uploads/2020/02/img-1-676x1024.jpg"
+                  className=" rounded-lg mt-14 lg:mt-28 hover:scale-105 lg:hover:scale-110 duration-300 ease-linear"
+                  src="https://i.ibb.co/DKpw6q0/pexels-photo-1640773.jpg"
                   alt=""
                 />
               </div>
             </div>
-            <div className="">
+            <div className="mx-auto lg:mx-3">
               <img
-                className="rounded-lg"
-                src="https://ithemeslab.com/tempkits/foodkit/wp-content/uploads/2020/02/img-2-676x1024.jpg"
+                className="rounded-lg my-14  hover:scale-105 lg:hover:scale-110 duration-300 ease-linear"
+                src="https://i.ibb.co/xjFXR38/pexels-photo-3070970.jpg"
                 alt=""
               />
             </div>
           </div>
         </div>
         <div className="w-full lg:w-1/2">
-          <div className="pl-10 ">
+          <div className="mx-5">
             <h3 className="text-2xl font-medium text-orange-400">About</h3>
             <h1 className="mt-5 text-3xl md:text-4xl">
               The Future Of Tradition{" "}
@@ -286,12 +286,12 @@ const About = () => {
             <div className="mt-14">
               <div className="flex ">
                 <img
-                  className="w-32 h-20 md:w-44 md:h-28 rounded-lg object-cover mr-5"
-                  src="https://ithemeslab.com/tempkits/foodkit/wp-content/uploads/2020/02/img-3.jpg"
+                  className="w-[45%] h-36 md:w-44 md:h-28 rounded-lg object-cover  mx-auto md:mx-0"
+                  src="https://i.ibb.co/WgVJR6z/pexels-photo-4963957.jpg"
                   alt=""
                 />
                 <img
-                  className="w-32 h-20 md:w-44 md:h-28 rounded-lg object-cover"
+                  className="w-[45%] h-36 md:w-44 md:h-28 rounded-lg object-cover mx-auto md:mx-5"
                   src="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   alt=""
                 />

@@ -38,7 +38,7 @@ const FQA = () => {
                 className="inline-flex text-lg items-center gap-x-3 w-full font-semibold text-left text-gray-700 py-4 px-5 hover:text-gray-900"
               >
                 {isClick === singleFqa.id && (
-                  <FaMinus className="text-gray-500"></FaMinus>
+                  <FaMinus className="text-gray-500 text-sm md:text-xl"></FaMinus>
                 )}
                 {singleFqa.id}. {singleFqa.question}
               </button>
@@ -47,8 +47,8 @@ const FQA = () => {
                 onClick={() => setClick(singleFqa.id)}
                 className="inline-flex text-lg items-center gap-x-3 w-full font-semibold text-left text-gray-700 py-4 px-5 hover:text-gray-900"
               >
-                <FaPlus className="text-orange-500"></FaPlus> {singleFqa.id}.{" "}
-                {singleFqa.question}
+                <FaPlus className="text-orange-500 text-sm md:text-xl"></FaPlus>{" "}
+                {singleFqa.id}. {singleFqa.question}
               </button>
             )}
             {isClick === singleFqa.id && (

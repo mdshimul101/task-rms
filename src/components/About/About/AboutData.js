@@ -39,9 +39,8 @@ export const reviewData = [
         definitely be back!” – Alina Monce.
       </>
     ),
-    image:
-      "https://ithemeslab.com/tempkits/foodkit/wp-content/uploads/2020/03/user-img.jpg",
-    name: "Alina Monce",
+    image: "https://i.ibb.co/FwDk371/pexels-photo-2068795.jpg",
+    name: "Alina Monco",
     rating: (
       <>
         <div className="flex">
@@ -155,7 +154,7 @@ export const chefsData = [
     name: "Carme Ruscalleda",
     position: "Senior Chef",
     image:
-      "https://themes.themegoods.com/capella/demo/wp-content/uploads/2014/02/Depositphotos_3233253_original-400x400.jpg",
+      "https://i.ibb.co/gZ8bp1n/Depositphotos-3233253-original-400x400.jpg",
     text: "Carme Ruscalleda is the only lady to be considered one of the best chefs in the world that have been awarded 7 Michelin stars so far. She is the chef with most Michelin stars among female chefs.",
   },
 ];
