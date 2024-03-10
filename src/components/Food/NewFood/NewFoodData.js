@@ -6,6 +6,7 @@ export const newFoodData = [
       "https://images.pexels.com/photos/1055270/pexels-photo-1055270.jpeg?auto=compress&cs=tinysrgb&w=600",
     name: "Cup Cake",
     price: 5,
+    quantity: 10,
   },
   {
     id: 22,
@@ -14,6 +15,7 @@ export const newFoodData = [
       "https://images.pexels.com/photos/338713/pexels-photo-338713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     name: "Orange Juice",
     price: 8,
+    quantity: 10,
   },
   {
     id: 23,
@@ -22,6 +24,7 @@ export const newFoodData = [
     image:
       "https://images.pexels.com/photos/5792329/pexels-photo-5792329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     price: 15,
+    quantity: 10,
   },
   {
     id: 24,
@@ -30,12 +33,14 @@ export const newFoodData = [
       "https://images.pexels.com/photos/2067396/pexels-photo-2067396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     name: "Chocolate Cake",
     price: 12,
+    quantity: 10,
   },
   {
     id: 25,
     category: "FastFood",
     name: "Pizza",
     price: 15,
+    quantity: 10,
     image:
       "https://images.pexels.com/photos/4394619/pexels-photo-4394619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
@@ -46,6 +51,7 @@ export const newFoodData = [
       "https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     name: "Coffee",
     price: 4,
+    quantity: 10,
   },
   {
     id: 27,
@@ -54,6 +60,7 @@ export const newFoodData = [
       "https://images.pexels.com/photos/9605309/pexels-photo-9605309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     name: "Apple juice",
     price: 3,
+    quantity: 10,
   },
   {
     id: 28,
@@ -62,6 +69,7 @@ export const newFoodData = [
       "https://images.pexels.com/photos/5061254/pexels-photo-5061254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     name: "Ice Cream",
     price: 7,
+    quantity: 10,
   },
   {
     id: 29,
@@ -70,6 +78,7 @@ export const newFoodData = [
       "https://images.pexels.com/photos/11067025/pexels-photo-11067025.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     name: "Cocktail Drink",
     price: 10,
+    quantity: 10,
   },
   {
     id: 30,

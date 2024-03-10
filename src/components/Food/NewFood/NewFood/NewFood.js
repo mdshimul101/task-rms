@@ -124,7 +124,9 @@ const NewFood = () => {
         <div className={` grid gap-8 grid-cols-1 md:grid-cols-2 lg:${gridCol}`}>
           {newFoodData
             .filter(
-              (foodData) => foodData.category === foodType || foodType === "All"
+              (foodData) =>
+                foodData.category.toLocaleLowerCase() ===
+                  foodType.toLocaleLowerCase() || foodType === "All"
             )
             .map((foodData) => (
               <>

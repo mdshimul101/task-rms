@@ -36,61 +36,40 @@ const cartReducer = (state = initialState, action) => {
       const productOutCart = state.filter(
         (product) => product.id !== productId
       );
-      if (productInCart) {
-        // return [
-        //   ...productOutCart,
-        //   {
-        //     ...productInCart,
-        //     quantity: productInCart.quantity - 1,
-        //     cart: productInCart.cart + 1,
-        //     top: "ok",
-        //   },
-        // ];
-        if (productInCart.quantity > 0) {
+      if (productInCart && productInCart.quantity > 0) {
+        return [
+          ...productOutCart,
+          {
+            ...productInCart,
+            quantity: productInCart.quantity - 1,
+            cart: productInCart.cart + 1,
+          },
+        ];
+      } else {
+        if (productData.quantity > 0) {
           return [
-            ...productOutCart,
+            ...state,
             {
-              ...productInCart,
-              quantity: productInCart.quantity - 1,
-              cart: productInCart.cart + 1,
-              top: "ok",
-            },
-          ];
-        } else {
-          return [
-            ...productOutCart,
-            {
-              ...productInCart,
-              quantity: productInCart.quantity,
-              cart: productInCart.cart,
-              topIn: "ok",
+              ...productData,
+              quantity: productData.quantity - 1,
+              cart: productData.cart + 1,
             },
           ];
         }
-      } else {
-        return [
-          ...state,
-          {
-            ...productData,
-            quantity: productData.quantity - 1,
-            cart: productData.cart + 1,
-            bot: "ok",
-          },
-        ];
       }
 
     case ADD_PRODUCT_IN_CART:
       return state.map((product) => {
-        if (product.id === payload) {
-          if (product.quantity > 0) {
-            return {
-              ...product,
-              quantity: product.quantity - 1,
-              cart: product.cart + 1,
-            };
-          } else {
-            return product;
-          }
+        if (product.id === payload && product.quantity > 0) {
+          // if (product.quantity > 0) {
+          return {
+            ...product,
+            quantity: product.quantity - 1,
+            cart: product.cart + 1,
+          };
+          // } else {
+          //   return product;
+          // }
         } else {
           return product;
         }

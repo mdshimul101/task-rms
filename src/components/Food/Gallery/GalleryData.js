@@ -2,22 +2,19 @@ export const galleryData = [
   {
     id: 1,
     image:
-      "https://foodtruck.sk-web-solutions.com/html/images/dishes-item3.jpg",
+      "https://img.freepik.com/free-photo/baked-chicken-wings-asian-style-tomatoes-sauce-plate_2829-10657.jpg?w=826&t=st=1709923501~exp=1709924101~hmac=28bf96502127a198744daf0a65054b9a58e48d46ceaad71c94dc7772be00dac8",
   },
   {
     id: 2,
-    image:
-      "https://foodtruck.sk-web-solutions.com/html/images/dishes-item6.jpg",
+    image: "https://i.ibb.co/c6M9yLY/pexels-photo-1872895.jpg",
   },
   {
     id: 3,
-    image:
-      "https://foodtruck.sk-web-solutions.com/html/images/dishes-item9.jpg",
+    image: "https://i.ibb.co/4KrrGZz/pexels-photo-4958543.jpg",
   },
   {
     id: 4,
-    image:
-      "https://themes.themegoods.com/capella/demo/wp-content/uploads/2011/05/Chicken-Wings-490x314.jpg",
+    image: "https://i.ibb.co/hCVWRFQ/Chicken-Wings-490x314.jpg",
   },
   {
     id: 5,
